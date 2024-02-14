@@ -1,6 +1,6 @@
 import Vote from '../models/vote.js';
 import User from '../models/user.js';
-
+// Save Vote
 export async function saveVote(req, res) {
   try {
       const { userId, postId, isTrue } = req.body;
@@ -37,7 +37,7 @@ export async function saveVote(req, res) {
       res.status(500).json({ error: error.message });
   }
 }
-
+// Get All Votes
 export async function getAllVotes(req, res) {
   try {
     const votes = await Vote.find();
@@ -46,7 +46,7 @@ export async function getAllVotes(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
-
+// Get Vote by id
 export async function getVoteById(req, res) {
   const { id } = req.params;
 
