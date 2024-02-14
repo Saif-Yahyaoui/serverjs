@@ -1,9 +1,9 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
-const { deleteAccount, deactivateAccount } = require('../controllers/accountController');
+import { deleteAccount, deactivateAccount } from '../controllers/accountController.js';
 
 // Routes pour supprimer et désactiver le compte utilisateur
 router.delete("/delete-account", deleteAccount);
 router.put("/deactivate-account", deactivateAccount);
 
-module.exports = router;
+export default router;

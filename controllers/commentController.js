@@ -1,4 +1,4 @@
-import Comment from '../models/comment';
+import Comment from '../models/comment.js';
 
 // Méthode pour créer un nouveau commentaire
 export const createComment = async (req, res) => {

@@ -1,5 +1,5 @@
-import Vote from '../models/vote';
-import User from '../models/user';
+import Vote from '../models/vote.js';
+import User from '../models/user.js';
 
 export async function saveVote(req, res) {
   try {

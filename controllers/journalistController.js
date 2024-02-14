@@ -1,7 +1,8 @@
-const Journalist = require('../models/journalist');
-
+import Journalist from '../models/journalist.js';
+ 
 // Méthode pour créer un nouveau journaliste
-exports.createJournalist = async (req, res) => {
+
+export async function createJournalist(req, res){
     try {
         const newJournalist = await Journalist.create(req.body);
         res.status(201).json(newJournalist);
@@ -11,7 +12,7 @@ exports.createJournalist = async (req, res) => {
 };
 
 // Méthode pour récupérer tous les journalistes
-exports.getAllJournalists = async (req, res) => {
+export async function getAllJournalists(req, res){
     try {
         const journalists = await Journalist.find();
         res.json(journalists);
@@ -21,7 +22,7 @@ exports.getAllJournalists = async (req, res) => {
 };
 
 // Méthode pour récupérer un journaliste par son ID
-exports.getJournalistById = async (req, res) => {
+export async function getJournalistById(req, res){
     try {
         const { id } = req.params;
         const journalist = await Journalist.findById(id);
@@ -35,7 +36,7 @@ exports.getJournalistById = async (req, res) => {
 };
 
 // Méthode pour mettre à jour un journaliste
-exports.updateJournalist = async (req, res) => {
+export async function updateJournalist(req, res){
     try {
         const { id } = req.params;
         const updatedJournalist = await Journalist.findByIdAndUpdate(id, req.body, { new: true });

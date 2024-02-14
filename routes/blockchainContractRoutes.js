@@ -1,6 +1,6 @@
-const express = require('express');
-const { body, param } = require('express-validator');
-const { createContract, getAllContracts, getContractById, updateContract, deleteContract } = require('../controllers/blockchainContractController');
+import express from "express";
+import { body, param } from "express-validator";
+import { createContract, getAllContracts, getContractById, updateContract, deleteContract } from '../controllers/blockchainContractController.js';
 
 const router = express.Router();
 
@@ -36,4 +36,4 @@ router.delete("/:id", [
   param("id").isMongoId(),
 ], deleteContract);
 
-module.exports = router;
+export default router;

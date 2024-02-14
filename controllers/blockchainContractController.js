@@ -1,4 +1,4 @@
-import BlockchainContract from '../models/blockchainContract';
+import BlockchainContract from '../models/blockchainContract.js';
 
 // Créer un nouveau contrat blockchain
 export const createContract = async (req, res) => {

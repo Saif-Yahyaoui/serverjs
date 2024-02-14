@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const User = require('./user');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+import User from './user.js';
+const { Schema, model } = mongoose;
 
 const journalistSchema = new Schema({
     ...User.schema.obj,
@@ -9,4 +9,4 @@ const journalistSchema = new Schema({
     articles: [{ type: Schema.Types.ObjectId, ref: 'Post' }] 
 });
 
-module.exports = mongoose.model('Journalist', journalistSchema);
+export default model('Journalist', journalistSchema);

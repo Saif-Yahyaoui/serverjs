@@ -1,7 +1,7 @@
-const Message = require('../models/message');
+import Message from '../models/message.js';
 
 // Méthode pour créer un nouveau message
-exports.createMessage = async (req, res) => {
+export async function createMessage(req, res){
     try {
         const { userId, content } = req.body;
         const newMessage = await Message.create({ userId, content });
@@ -12,7 +12,7 @@ exports.createMessage = async (req, res) => {
 };
 
 // Méthode pour récupérer tous les messages
-exports.getAllMessages = async (req, res) => {
+export async function getAllMessages(req, res){
     try {
         const messages = await Message.find();
         res.json(messages);
@@ -22,7 +22,7 @@ exports.getAllMessages = async (req, res) => {
 };
 
 // Méthode pour récupérer un message par son ID
-exports.getMessageById = async (req, res) => {
+export async function getMessageById(req, res){
     try {
         const { id } = req.params;
         const message = await Message.findById(id);
@@ -52,7 +52,7 @@ exports.updateMessage = async (req, res) => {
 */
 
 // Méthode pour supprimer un message
-exports.deleteMessage = async (req, res) => {
+export async function deleteMessage(req, res){
     try {
         const { id } = req.params;
         const deletedMessage = await Message.findByIdAndDelete(id);

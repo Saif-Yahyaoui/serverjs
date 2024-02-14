@@ -1,6 +1,6 @@
-const express = require('express');
-const { body, param } = require('express-validator');
-const { createMessage, getAllMessages, getMessageById, deleteMessage } = require('../controllers/messageController');
+import express from "express";
+import { body, param } from "express-validator";
+import { createMessage, getAllMessages, getMessageById, deleteMessage } from '../controllers/messageController.js';
 
 const router = express.Router();
 
@@ -23,4 +23,4 @@ router.delete("/:id", [
   param("id").isMongoId(),
 ], deleteMessage);
 
-module.exports = router;
+export default router;

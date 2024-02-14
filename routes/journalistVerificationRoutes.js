@@ -1,6 +1,6 @@
-const express = require('express');
-const { body, param } = require('express-validator');
-const { createJournalistVerification, getAllJournalistVerifications, getJournalistVerificationById, updateJournalistVerification } = require('../controllers/journalistVerificationController');
+import express from "express";
+import { body, param } from "express-validator";
+import { createJournalistVerification, getAllJournalistVerifications, getJournalistVerificationById, updateJournalistVerification } from '../controllers/journalistVerificationController.js';
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router.put("/:id", [
   body("adminId").notEmpty(),
 ], updateJournalistVerification);
 
-module.exports = router;
+export default router;

@@ -1,6 +1,6 @@
-const express = require('express');
-const { body, param } = require('express-validator');
-const { createComment, getAllComments, getCommentById, deleteComment } = require('../controllers/commentController');
+import express from "express";
+import { body, param } from "express-validator";
+import { createComment, getAllComments, getCommentById, deleteComment } from '../controllers/commentController.js';
 
 const router = express.Router();
 
@@ -23,4 +23,4 @@ router.delete("/:id", [
   param("id").isMongoId(),
 ], deleteComment);
 
-module.exports = router;
+export default router;

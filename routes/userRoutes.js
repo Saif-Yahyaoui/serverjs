@@ -1,6 +1,6 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
-const { editProfile, getAllUsers, getUserDetails, changePassword, followJournalist, unfollowJournalist } = require('../controllers/userController');
+import { editProfile, getAllUsers, getUserDetails, changePassword, followJournalist, unfollowJournalist } from '../controllers/userController.js';
 
 // Routes pour l'édition du profil
 router.put("/edit-profile", editProfile);
@@ -14,4 +14,4 @@ router.put("/change-password", changePassword);
 router.post("/follow-journalist/:journalistId", followJournalist);
 router.delete("/unfollow-journalist/:journalistId", unfollowJournalist);
 
-module.exports = router;
+export default router;

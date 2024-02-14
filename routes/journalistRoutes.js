@@ -1,6 +1,6 @@
-const express = require('express');
-const { body, param } = require('express-validator');
-const { createJournalist, getAllJournalists, getJournalistById, updateJournalist } = require('../controllers/journalistController');
+import express from "express";
+import { param } from "express-validator";
+import { createJournalist, getAllJournalists, getJournalistById, updateJournalist } from '../controllers/journalistController.js';
 
 const router = express.Router();
 
@@ -20,4 +20,4 @@ router.put("/:id", [
   param("id").isMongoId(),
 ], updateJournalist);
 
-module.exports = router;
+export default router;
