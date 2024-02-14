@@ -6,7 +6,7 @@ const postSchema = new Schema(
         userId: {
             type: Schema.Types.ObjectId, 
             ref: 'User',
-            required: true
+            required: false
         },
         title: {
             type: String,
@@ -22,33 +22,33 @@ const postSchema = new Schema(
         },
         verified: {
             type: Boolean,
-            required: true
+            //required: false
         },
         credibilityScore: { //pourcentage
             type: Number,
-            required: true
+            //required: false
         },
         votes: {
             type: Schema.Types.ObjectId, 
             ref: 'Vote',
-            required: true
+            //required: false
         },
         comments: {
             type: Schema.Types.ObjectId, 
             ref: 'Comment',
-            required: true
+            //required: false
         },
         likes: {
             type: Number,
-            required: true
+            //required: false
         },
         dislikes: {
             type: Number,
-            required: true
+            //required: false
         },
         reports: { //Nombre de signalements
             type: Number,
-            required: true
+           // required: false
         } //attachments si on desire ajouter des attachements (image..) au message
     },
     {

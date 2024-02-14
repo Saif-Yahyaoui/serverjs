@@ -14,11 +14,11 @@ const commentSchema = new Schema(
         },
         likes: {
             type: Number,
-            required: true
+           // required: true
         },
         dislikes: {
             type: Number,
-            required: true
+           // required: true
         },
         replies: [{
             type: mongoose.Schema.Types.ObjectId,

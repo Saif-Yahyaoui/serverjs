@@ -1,10 +1,10 @@
 import Post from "../models/post.js";
 
 export async function createPost(req, res) {
-  const { title, content, category, verified, credibilityScore, userId } = req.body;
+  const { title, content, category, userId } = req.body;
 
   try {
-    const newPost = await Post.create({ title, content, category, verified, credibilityScore, userId });
+    const newPost = await Post.create({ title, content, category, userId });
     res.status(201).json(newPost);
   } catch (error) {
     res.status(500).json({ error: error.message });

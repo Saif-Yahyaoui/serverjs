@@ -25,15 +25,15 @@ const userSchema = new Schema(
         },
         profileImage: {
             type: String,
-            required: true
+            //required: true
         },
         reputation: {
             type: Number,
-            required: true
+            //required: true
         },
         badgeReputation: {
             type: String,
-            required: true
+            //required: true
         },
         votesCount: {
             type: Number,
@@ -41,32 +41,32 @@ const userSchema = new Schema(
         },
         badgeAchievement: { 
             type: String,
-            required: true
+            //required: true
         },
         voteHistory: {
             type: Schema.Types.ObjectId,
             ref: 'Vote',
-            required: true
+            //required: true
         },
         chatHistory: {
             type: Schema.Types.ObjectId,
             ref: 'Message', 
-            required: true
+            //required: true
         },
         followedJournalists: [{
             type: Schema.Types.ObjectId,
             ref: 'Journalist',
-            required: true
+            //required: true
         }],
         savedPosts: {
             type: Schema.Types.ObjectId,
             ref: 'Post',
-            required: true
+            //required: true
         },
         reports: {
             type: Schema.Types.ObjectId,
             ref: 'Report',
-            required: true
+            //required: true
         },
         
     },

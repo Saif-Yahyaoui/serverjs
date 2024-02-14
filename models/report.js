@@ -19,7 +19,7 @@ const reportSchema = new Schema(
         },
         status: {
             type: String,
-            required: true
+            //required: true
         }
     },
     {

@@ -5,7 +5,7 @@ const messageSchema = new Schema({
     userId: {
          type: Schema.Types.ObjectId, 
         ref: 'User',
-        required: true 
+       // required: true 
     },
     content: {
         type: String,
