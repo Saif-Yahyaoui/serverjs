@@ -11,7 +11,7 @@ router.post("/", [
   body("isTrue").isBoolean(),
 ], saveVote);
 
-// Obtenir tous les votes
+// gzt all votes
 router.get("/", getAllVotes);
 
 // Obtenir un vote par ID
